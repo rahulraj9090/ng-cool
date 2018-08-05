@@ -1,0 +1,67 @@
+<br/>
+<div class= 'panel panel-primary'>
+    <div class="panel-heading">
+         Product List component         
+    </div>
+
+    
+    <div class= "panel-body">
+        <div class='row'>
+            <div class="col-md-2"><h4>Filter by:</h4></div>
+            <div class="col-md-4"> 
+                <input type="text"/>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Filtered by: </h4>
+            </div>
+        </div>
+
+        <div class="table table-responsive">
+            <table class="table  table-bordered table-hover text-center">
+                <thead class="thead-dark">
+                    <tr class=" text-center">
+                        <th class="text-center"><input type="checkbox" class="form-check-input" id="checkbox100" ></th>                        
+                        <th class="text-center"><b>Code</b></th>
+                        <th class="text-center">
+                            <button class="btn btn-primary" (click) = 'toggleImage()'>
+                                <!--Show Image-->
+                                     {{showImage ? 'Hide' : 'Show'}} Image 
+                                </button> 
+                        </th>
+                        <th class="text-center"><b>Product</b></th>                        
+                        <th class="text-center"><b>Status</b></th>
+                        <th class="text-center"><b>Price</b></th>
+                        <th class="text-center"><b>Rating</b></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor = 'let obj of products'>
+                        <td><input type="checkbox" class="form-check-input" id="checkbox100" ></td>                        
+                        <td>{{obj.code}}</td>
+                        <td><img src="{{obj.productImg}}" style.width.px="{{wid}}" style.height.px="{{hit}}"></td>
+                        <!-- <td><img src="http://www.boxit.co.nz/{{obj.productImg}}"></td> -->
+                        <!-- <td><img [src] ='obj.productImg'></td> -->
+                        <td><a [routerLink] = "['/product',obj.code]">{{obj.product | uppercase}}</a></td>
+                        <td>{{obj.available}}</td>
+                        <td>{{obj.price}}</td>
+                        <td>{{obj.rating}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="7" align="left">
+                            <button class="btn btn-success">
+                                Update
+                            </button>&nbsp;
+                            <button class="btn btn-danger">
+                                Delete
+                            </button>  
+                        </td>
+                    </tr>
+                </tbody>                
+            </table>
+        </div>
+    </div>
+</div>

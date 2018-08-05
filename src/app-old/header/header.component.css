@@ -1,0 +1,18 @@
+header{
+    height: 70px;
+    line-height: 40px;
+    background-color: #fcaa55;
+}
+
+nav ul li{
+    padding-top: 10px;
+    color:#fff;
+}
+
+nav ul li a{
+    color:#fff;
+}
+
+nav ul li a:hover, nav ul li a:focus{
+    color:#555;
+}

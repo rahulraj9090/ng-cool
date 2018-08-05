@@ -1,0 +1,11 @@
+header{
+    height: 70px;
+    line-height: 40px;
+}
+
+.navbar ul li{
+    margin-top:10px;
+}
+.logo{
+    padding-top:0px;
+}
